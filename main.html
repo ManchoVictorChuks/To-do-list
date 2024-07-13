@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body class="main-body">
+    <div class="to-do">
+        <div class="first" id="slideDiv">
+            <div class="first-main">
+                <h2>Menu</h2>
+                <div class="hamburger-container">
+                    <button onclick="
+                        const slideDiv = document.getElementById('slideDiv');
+                        slideDiv.classList.toggle('hidden');
+                    " class="hamburger-btn" id="slideButton">
+                        <div class="hamburger"></div>
+                        <div class="hamburger"></div>
+                        <div class="hamburger"></div>
+                    </button>
+                </div>
+            </div>
+
+            <form class="search" action="">
+                <input type="text" name="search-bar" class="search-bar" placeholder="Search">
+                <button class="search-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="search-icon">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zm-5.292 1.397a5.5 5.5 0 1 1 0-7.778 5.5 5.5 0 0 1 0 7.778z"/>
+                    </svg>
+                </button>
+            </form>
+
+            <div class="content">
+                <div class="task-sct" id="task-sct">
+                    <h3>Tasks</h3>
+                    <ul class="menu">
+                        <li><i class="fas fa-calendar-alt"></i> Upcoming <span class="badge">12</span></li>
+                        <li><i class="fas fa-calendar-day"></i> Today <span class="badge">5</span></li>
+                        <li><i class="fas fa-calendar"></i> Calendar</li>
+                        <li><i class="fas fa-sticky-note"></i> Sticky Wall</li>
+                    </ul>
+                </div>
+
+                <div class="lists">
+                    <h3>Lists</h3>
+                    <ul>
+                        <li><i class="fas fa-circle" style="color: red;"></i> Personal <span class="badge">3</span></li>
+                        <li><i class="fas fa-circle" style="color: blue;"></i> Work <span class="badge">6</span></li>
+                        <li><i class="fas fa-circle" style="color: yellow;"></i> List 1 <span class="badge">3</span></li>
+                        <button id="addItemButton"><i class="fas fa-plus-circle"></i> Add New List Item</button>
+                    </ul>
+                </div>
+
+                <div class="tags">
+                    <h3>Tags</h3>
+                    <ul>
+                        <li class="tag" style="background-color: #AEDFF7;">Tag 1</li>
+                        <li class="tag" style="background-color: #FFC1C1;">Tag 2</li>
+                        <li class="tag add-tag">+ Add Tag</li>
+                    </ul>
+                </div>
+
+                <div class="end">
+                    <ul class="menu">
+                        <li class="menu-item">
+                            <a href="index.html">
+                            <i class="fas fa-cog menu-icon"></i>
+                            <span class="menu-text">Settings</span></a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="index.html">
+                            <i class="fas fa-sign-out-alt menu-icon"></i>
+                            <span class="menu-text">Sign out</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="" id="second-area">
+            <div class="top">
+                <h2>Today</h2>
+                <div class="display-list-num">
+                   0
+                </div>
+            </div>
+
+            <div class="button-area">
+                <button onclick="toggleSections()">
+                    <p>+</p>
+                    Add New Task
+                </button>
+            </div>
+
+            <div class="the-tasks">
+                <ul class="task-list" id="taskList">
+                    <li class="list-num">
+                        <button class="task-item">
+                            <div class="inside-task">
+                                <p>Go to church</p>
+                                <div class="extras">
+                                    <ul>
+                                        <li class="date-sct"><i class="fas fa-calendar-day"></i></li>
+                                        <li class="subtasks-sct"></li>
+                                        <li class="list-type"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="" id="third-area">
+            <div class="top">
+                <h3>Add New Task</h3>
+                <button class="remove-Btn" onclick="
+                    const thirdSec = document.getElementById('third-area');
+                    const secondSec = document.getElementById('second-area');
+                    thirdSec.className = '';
+                    secondSec.className = '';
+                "><p>X</p></button>
+            </div>
+
+            <form id="taskForm">
+                <div class="inputTask">
+                    <input type="text" name="mainTask" id="maintask" placeholder="Enter The Task Name here." required>
+                    <input type="text" name="taskDescription" id="taskDescription" placeholder="Describe your Task.">
+                    <input type="date" name="taskDate" id="taskDate">
+                </div>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
